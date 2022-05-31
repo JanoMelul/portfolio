@@ -9,20 +9,41 @@ import ReduxJs from './img/imgAbout/redux.svg'
 import NodeJs from './img/imgAbout/nodejs.svg'
 import MySql from './img/imgAbout/mysql.svg'
 import Git from './img/imgAbout/git.png'
+import Project from './component/Project';
 
 function App() {
+
+  const projects = [
+    {
+      id: 1,
+      projectName: 'Clon mercadoLibre',
+      projectImg: Avatar,
+      projectTecnologies: 'react'
+    },
+    {
+      id: 2,
+      projectName: 'Clon twitter',
+      projectImg: Avatar,
+      projectTecnologies: 'react'
+    },
+    {
+      id: 3,
+      projectName: 'Clon netflix',
+      projectImg: Avatar,
+      projectTecnologies: 'react'
+    }
+  ]
   
-  const navMenu = document.getElementById("nav-menu");
   const navLinks = document.querySelectorAll('.navLink');
   const fontSizes = document.querySelectorAll('.chooseSize span');
   const colorPalette = document.querySelectorAll('.chooseColor span');
   var root = document.querySelector(':root');
   const showMenu = () =>{
-    navMenu.classList.add("showMenu")
+    document.getElementById("nav-menu").classList.add("showMenu")
   }
 
   const closeMenu = () =>{
-    navMenu.classList.remove("showMenu")
+    document.getElementById("nav-menu").classList.remove("showMenu")
   }
 
   function linkAction(){
@@ -85,9 +106,9 @@ function App() {
     } else if(e.target.classList.contains('color2')){
       primaryHue = 52;
     } else if(e.target.classList.contains('color3')){
-      primaryHue = 352;
-    } else if(e.target.classList.contains('color4')){
       primaryHue = 152;
+    } else if(e.target.classList.contains('color4')){
+      primaryHue = 352;
     } else if(e.target.classList.contains('color5')){
       primaryHue = 202;
     }
@@ -297,54 +318,14 @@ function App() {
           </div>
         </div>
         <div className="row">
+          {
+              projects.map((project) => {
+              return <Project key={project.id} projectName={project.projectName} projectImg={project.projectImg} projectTecnologies={project.projectTecnologies}/>
+              })
+          }
           
-          <div className="portfolioProject padd15">
-            <div className="portfolioProjectInner">
-              <div className="portfolioProjectThumbnail">
-                <img src={Avatar} alt="avatar" />
-                <div className="mask"></div>
-              </div>
-              <span className="term">React</span>
-              <h3 className="portfolioItemTitle">Clon Mercado Libre</h3>
-              <span className="moreButton">&hellip;</span>
-            </div>
-          </div>
           
-          <div className="portfolioProject padd15">
-            <div className="portfolioProjectInner">
-              <div className="portfolioProjectThumbnail">
-                <img src={Avatar} alt="avatar" />
-                <div className="mask"></div>
-              </div>
-              <span className="term">React</span>
-              <h3 className="portfolioItemTitle">Clon Mercado Libre</h3>
-              <span className="moreButton">&hellip;</span>
-            </div>
-          </div>
           
-          <div className="portfolioProject padd15">
-            <div className="portfolioProjectInner">
-              <div className="portfolioProjectThumbnail">
-                <img src={Avatar} alt="avatar" />
-                <div className="mask"></div>
-              </div>
-              <span className="term">JavaScript</span>
-              <h3 className="portfolioItemTitle">Clon Mercado Libre</h3>
-              <span className="moreButton">&hellip;</span>
-            </div>
-          </div>
-          
-          <div className="portfolioProject padd15">
-            <div className="portfolioProjectInner">
-              <div className="portfolioProjectThumbnail">
-                <img src={Avatar} alt="avatar" />
-                <div className="mask"></div>
-              </div>
-              <span className="term">Node.js</span>
-              <h3 className="portfolioItemTitle">Clon Mercado Libre</h3>
-              <span className="moreButton">&hellip;</span>
-            </div>
-          </div>
           
         </div>
       </div>

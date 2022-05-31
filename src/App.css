@@ -494,9 +494,11 @@ height: auto;
 .contactData{
   display: grid;
   row-gap: 2rem;
+  
 }
 .contactSubtitle{
   margin-bottom: var(--m-0-5);
+  color: var(--color-primary);
 }
 .contactDescription{
   display: inline-flex;
@@ -505,6 +507,7 @@ height: auto;
 }
 .contactIcon{
   font-size: 1.2rem;
+  color: var(--color-primary);
 }
 .contactInputs{
   display: grid;
@@ -551,6 +554,7 @@ height: auto;
 }
 .contactArea{
   height: 7rem;
+  
 }
 .contactArea textarea{
   resize: none;
@@ -648,7 +652,7 @@ height: auto;
   background-color: hsl(52, 75%, 60%);
 }
 .customizeTheme .chooseColor span:nth-child(3){
-  background-color: #4ce69e;
+  background-color: hsl(152, 75%, 60%);
 }
 .customizeTheme .chooseColor span:nth-child(4){
   background-color: hsl(352, 75%, 60%);
